@@ -1,3 +1,4 @@
+import React from 'react'
 import Router from 'next/router'
 import ProgressBar from '@badrap/bar-of-progress'
 
@@ -10,8 +11,10 @@ const progress = new ProgressBar({
   delay:100,
 })
 
-Router.events.on('routeChangeStart', progress.start);
+Router.events.on('routeChangeStart', progress.start)
 Router.events.on('routeChangeComplete', progress.finish)
 Router.events.on('routeChangeError', progress.finish)
 
-export default ({ Component, pageProps }) => <Component {...pageProps} />
+const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />
+
+export default MyApp
